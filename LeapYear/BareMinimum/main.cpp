@@ -10,6 +10,7 @@
 const int pinForDiode = 2;
 const int year = 1600;
 
+// millis() setup:
 unsigned long previousMillis = 0;
 const long interval = 1000;
 
@@ -24,6 +25,7 @@ void loop() {
 	unsigned long currentMillis = millis();
 	if (currentMillis - previousMillis >= interval)
 	{
+		// checking if the year is a leap year - calculating it.
 		if ((year % 4 == 0) && (year % 100 != 0) || (year % 400  == 0))
 		{
 			digitalWrite(pinForDiode, HIGH);
